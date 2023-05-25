@@ -1,0 +1,9 @@
+step1: javac Bully.java
+
+step2: java Bully
+
+--------------------------
+
+step1: javac Ring.java
+
+step2: java Ring

@@ -1,0 +1,3 @@
+step1: python Server.py
+
+step2: python Client.py
