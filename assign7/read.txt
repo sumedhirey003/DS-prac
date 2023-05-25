@@ -1,0 +1,124 @@
+step1: download apache 8.2 (from site: https://netbeans-ide.informer.com/8.2/)
+
+->open apache 
+-> click file
+-> new project 
+-> select JavaWeb(if not seen Java Ant)
+-> select WebApplication
+-> click next
+-> project name : CalculatorWebService
+-> select server Glassfish server 4.1.1
+-> click next
+-> click Finish
+
+Server side steps
+-> right click on Project name CalculatorWebService
+   -> new 
+      -> select WebService
+        -> name the webservice as Calculator
+          -> package name com.unique
+            ->select package name as above and finish
+
+-> click on Webservice
+  ->click Calculator
+    -> remove the hello string code
+      -> creating addition method
+	  -> right click on calculator 
+          -> add operation
+             -> name getNumber
+               -> returntype: int
+                 -> click on add 
+                    -> 1)num1 2)int 3)add {the numbers are the steps}
+                    -> 1)num1 2)int 3)ok {the numbers are the steps}
+         -> in the code add
+		-> int sum = num1 + num2;
+               return sum;
+   -> right click on project name clean & build
+   -> right click and deploy
+-> right click on Calculator TestWebService
+-> calculator will open on the chrome and perform addition.
+
+Client side steps
+
+-> click file
+-> new project 
+-> select JavaWeb(if not seen Java Ant)
+-> select WebApplication
+-> click next
+-> project name : CalculatorWebServiceClient
+-> select server Glassfish server 4.1.1
+-> click next
+-> click Finish
+
+-> Right click on project name CalculatorWebServiceClient
+  -> new WebServiceClient
+    ->browse project Select CalculatorWebService
+     -> select Calculator
+       -> Click ok & then Finish
+-> index.html file will be visible 
+  -> in  that file remove (div) tag
+ -> on the right side in the plallete
+    ->drag & drop form tag to the code
+      -> screen opens action name Caluclator
+        -> click ok
+    -> on next line 
+        -> Enter Number 1: -> Drag & drop text input(name input txt1)
+        <br>   
+        -> click ok
+        -> Enter Number 2: -> Drag & drop text input(name input txt2)
+        <br>
+        -> click ok
+      -> drag & drop button
+         -> label name Submit
+           -> click ok
+         -> right click and run file
+servelet
+-> in CalculatorWebServiceClient right click source package file
+   -> click new
+     -> select servelet
+       -> name Calculator
+        -> click next click on checkbox and finish
+-> calculator.java file will open 
+-> drag & drop from left side
+-> on the left side 
+   -> WebService Reffrences
+      -> init calculator 
+       -> init calculator port
+          -> drag & drop that getNumber below the http servelet method
+              
+-> to do output comment
+   write this code
+-> int num1, num2;
+    num1 = Integer.parseInt(request.getParameter("txt1"));
+    num2 = Integer.parseInt(request.getParameter("txt2"));  
+
+call this method in the body from the bottom third line
+
+  ->out.println("<h1>" +getNumber(num1,num2)+ "</h1>")
+
+Right click on calculatorWebServiceClient 
+   
+-> clean & build
+
+-> right click on index.html
+     -> run file
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
