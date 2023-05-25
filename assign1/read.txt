@@ -1,0 +1,10 @@
+step1: javac CalculatorAdd.java
+step2: java CalculatorAdd
+step3: rmic CalculatorAdd
+step4: rmiregistry on console
+open new terminal
+step5: javac Server.java
+step6: java Server
+open new terminal
+step7: javac Client.java
+step*: java Client
