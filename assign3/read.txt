@@ -1,0 +1,29 @@
+step1: open chrome visit site https://www.open-mpi.org/software/ompi/v4.1/
+
+download openmpi-4.1.4.tar.bz2 file
+
+create lp file on desktop
+
+cut paste the downloaded file into that folder
+
+open terminal
+
+step2: sudo apt-get-update
+
+step3: sudo apt install gcc
+
+step4: tar -jxf openmpi-4.1.4.tar.bz2
+
+step5: ./configure --prefix=$HOME/opt/openmpi
+
+step6: make all
+
+step7: make install
+
+step8: echo "export PATH=\$PATH:\$HOME/opt/openmpi/bin" >> $HOME/.bashrc
+
+step9: echo "export LD_LIBRARY_PATH=\$LD_LIBRARY_PATH:\$HOME/opt/openmpi/lib">>$HOME/.bashrc
+
+step10: mpicc Add.c
+
+step11: mpirun -np 4 ./a.out
