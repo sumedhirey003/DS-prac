@@ -1,0 +1,11 @@
+step1:   idlj -fall  ReverseModule.idl
+
+step2: javac *.java  ReverseModule/*.java
+
+step3: orbd -ORBInitialPort 1050&
+
+step4: java ReverseServer -ORBInitialPort 1050& -ORBInitialHost localhost&
+
+open new terminal
+
+step5: java ReverseClient -ORBInitialPort 1050 -ORBInitialHost localhost
